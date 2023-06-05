@@ -24,7 +24,7 @@ const listContactsService = async (clientId:string): Promise<TContactsResponse> 
             client: client
         }
     })
-    console.log(contacts)
+    
     return contactsSchemaResponse.parse(contacts)
 }
 
