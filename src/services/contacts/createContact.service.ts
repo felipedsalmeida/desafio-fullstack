@@ -1,8 +1,8 @@
 import { Repository } from "typeorm";
 import { TContactRequest, TContactResponse } from "../../interfaces/constacts.interfaces";
-import { Contact } from "../../entities/contact.entitie";
+import { Contact } from "../../entities/contact.entity";
 import { AppDataSource } from "../../data-source";
-import { Client } from "../../entities/client.entitie";
+import { Client } from "../../entities/client.entity";
 import { AppError } from "../../errors/AppError";
 import { contactSchema } from "../../schemas/contacts.schemas";
 

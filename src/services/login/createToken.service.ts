@@ -1,6 +1,6 @@
 import { compare } from "bcryptjs"
 import { AppDataSource } from "../../data-source"
-import { Client } from "../../entities/client.entitie"
+import { Client } from "../../entities/client.entity"
 import { AppError } from "../../errors/AppError"
 import { TLoginRequest } from "../../interfaces/login.interfaces"
 import jwt from "jsonwebtoken"
@@ -28,7 +28,8 @@ const createTokenService = async ({email, password}: TLoginRequest): Promise<str
 
     const token = jwt.sign(
         {
-            clientName: client.name,
+            clientFirstName: client.first_name,
+            clientLastName: client.last_name,
             clientEmail: client.email
         },
         process.env.SECRET_KEY!,

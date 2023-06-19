@@ -1,5 +1,5 @@
 import { Repository } from "typeorm"
-import { Contact } from "../../entities/contact.entitie"
+import { Contact } from "../../entities/contact.entity"
 import { AppDataSource } from "../../data-source"
 import { AppError } from "../../errors/AppError"
 

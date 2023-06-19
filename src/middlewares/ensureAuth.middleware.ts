@@ -19,7 +19,10 @@ const ensureAuthMiddleware = (req: Request, res: Response, next: NextFunction) =
                 message: "Invalid Token"
             })
         }
-        res.locals.clientId = decoded.sub
+        res.locals.client_id = decoded.sub
+        res.locals.client_first_name = decoded.clientFirstName
+        res.locals.client_last_name = decoded.clientLastName
+        res.locals.client_email = decoded.clientEmail
         return next()
     })
 }

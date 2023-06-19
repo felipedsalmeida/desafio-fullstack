@@ -1,12 +1,12 @@
 import { AppDataSource } from "../../data-source";
-import { Client } from "../../entities/client.entitie";
+import { Client } from "../../entities/client.entity";
 import { TClientRequest, TClientResponse } from "../../interfaces/clients.interfaces";
 import {hash} from "bcryptjs"
 import { clientSchemaResponse } from "../../schemas/clients.schemas";
 import { AppError } from "../../errors/AppError";
 
 const createClientService = async (data: TClientRequest): Promise<TClientResponse> => {
-    const {name, email, password} = data
+    const { email, password} = data
     const clientRepository = AppDataSource.getRepository(Client)
     const findClient = await clientRepository.findOne({
         where: {

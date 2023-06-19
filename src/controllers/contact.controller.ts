@@ -7,7 +7,7 @@ import { deleteContactService } from "../services/contacts/delete.service";
 
 
 const createContactController = async (req: Request, res: Response) => {
-    const clientId = res.locals.clientId
+    const clientId = res.locals.client_id
 
     const newContact = await createContactService(req.body, clientId)
 
@@ -15,7 +15,7 @@ const createContactController = async (req: Request, res: Response) => {
 }
 
 const listContactsController = async (req: Request, res: Response) => {
-    const clientId = res.locals.clientId
+    const clientId = res.locals.client_id
 
     const contacts = await listContactsService(clientId)
    

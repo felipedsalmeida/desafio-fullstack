@@ -2,16 +2,21 @@ import {z} from "zod"
 
 const contactSchema = z.object({
     id: z.string(),
-    name: z.string(),
+    username: z.string(),
+    first_name: z.string(),
+    last_name: z.string(),
     email: z.string().email(),
+    birthdate: z.string(),
     telephone: z.string().min(10).max(11),
-    img: z.string(),
-    createdAt: z.string()
+    profile_img: z.string(),
+    created_at: z.string(),
+    updated_at: z.string()
 })
 
 const contactSchemaRequest = contactSchema.omit({
     id: true,
-    createdAt: true
+    created_at: true,
+    updated_at: true
 })
 
 const contactsSchemaResponse = z.array(contactSchema)

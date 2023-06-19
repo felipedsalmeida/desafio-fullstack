@@ -1,12 +1,12 @@
 import { Request, Response, NextFunction } from "express"
 import { AppDataSource } from "../data-source"
-import { Contact } from "../entities/contact.entitie"
+import { Contact } from "../entities/contact.entity"
 
 const ensureIsOwnerMiddleware = async (req: Request, res: Response, next: NextFunction) => {
     const contactsRepository = AppDataSource.getRepository(Contact)
 
     const contactId: string = req.params.id
-    const clientId: string = res.locals.clientId
+    const clientId: string = res.locals.client_id
 
     const contact = await contactsRepository.findOne({
         where: {
